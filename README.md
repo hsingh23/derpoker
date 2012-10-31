@@ -28,7 +28,7 @@ To start wreaking havoc you need to do two things. First run the selenium server
 
 Leave that running and then start the autopoker script:
 
-  python autopokes.py
+    python autopokes.py
 
 That's it! Now kick back and enjoy your pure, unadulterated poke domination.
 
