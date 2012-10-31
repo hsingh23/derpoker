@@ -39,22 +39,25 @@
       <br/>
       <div class="hero-unit">
         <h1>Poke At Me Bro</h1>
-        <a href="https://www.facebok.com/kurtis.nusbaum">Go ahead. Do it.</a>
+        <br/>
+        <a class="btn btn-primary btn-large" href="https://www.facebook.com/kurtis.nusbaum">Go ahead. Do it.</a>
       </div>
 
       <div class="row">
         <div class="offset3 span5">
           <table class="table table-striped table-bordered">
-            <tr>
-              <th>Poker</th>
-              <th>Number of times I've poked them</th>
-            </tr>
-          {% for poker_entry in pokers %}
+            <thead>
+              <tr>
+                <th>Poker</th>
+                <th>Number of times I've poked them</th>
+              </tr>
+            </thead>
+            {% for poker_entry in pokers %}
             <tr>
               <td> <a href="https://www.facebook.com/{{ poker_entry.poker_profile_link }}">{{ poker_entry.poker }}</a></td>
               <td> {{ poker_entry.num_pokes }} </td>
             </td>
-          {% endfor %}
+            {% endfor %}
           </table>
 
         </div><!-- span12 -->
@@ -62,9 +65,10 @@
 
       <div class="row">
         <div class="span4">
-          <p>Like takeapokeat.me? Checkout my other project: <a href="https://www.udjplayer.com">UDJ</a></p>
-        </div>
-      </div>
+          <p>Like takeapokeat.me? 
+          Checkout my other project: <a href="https://www.udjplayer.com">UDJ</a></p>
+        </div> <!-- span4 -->
+      </div> <!-- row -->
 
     </div><!-- container -->
 
