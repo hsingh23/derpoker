@@ -15,9 +15,9 @@ def openLogConnection():
 def closeLogConnection(conn):
   conn.close()
 
-def logPoke(poker, logConn):
+def logPoke(logConn, poker, pokerlink):
   try:
-    logConn.execute("INSERT INTO pokeviewer_poke(poker, poke_time ) VALUES ('" + poker +"', now())")
+    logConn.execute("INSERT INTO pokeviewer_poke(poker, poke_time, poker_profile_link) VALUES ('{0}', now(), '{1}')".format(poker,pokerlink))
   except Exception as f:
     print str(f)
 
@@ -39,12 +39,14 @@ def loopThatShit(browser, logConn):
       pokers = pokeDashboard.find_elements_by_class_name('objectListItem')
       for poker in pokers:
         try:
-          pokername = poker.find_element_by_class_name('pokeHeader').text.rsplit(' ',3)[0]
           pokeLink = poker.find_element_by_link_text('Poke Back')
+          pokeheader = poker.find_element_by_class_name('pokeHeader')
+          pokername = pokeheader.text.rsplit(' ',3)[0]
+          pokerlink = pokeheader.find_element_by_partial_link_text(pokername).get_attribute('href').split('/')[-1]
           pokeLink.click()
-          logPoke(pokername, logConn)
-        except Exception:
-          pass
+          logPoke(logConn, pokername, pokerlink)
+        except Exception as f:
+          print str(f)
 
       sleep(1)
 

@@ -7,7 +7,7 @@
   <table>
   {% for poker_entry in pokers %}
     <tr>
-      <td> {{ poker_entry.poker }} </td>
+      <td> <a href="https://www.facebook.com/{{ poker_entry.poker_profile_link }}">{{ poker_entry.poker }}</a></td>
       <td> {{ poker_entry.num_pokes }} </td>
     </td>
   {% endfor %}
