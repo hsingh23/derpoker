@@ -1,7 +1,7 @@
 # Django settings for derpoker project.
 import os
 
-DEBUG = False
+DEBUG = os.environ.get('DERPOKER_DEBUG', default=False)
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
