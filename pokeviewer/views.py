@@ -24,7 +24,7 @@ from django.db.models import Count
 
 
 def home(request):
-  pokers = Poke.objects.values('poker', 'poker_profile_link').annotate(num_pokes=Count('poker')).order_by('-num_pokes')[:10]
+  pokers = Poke.objects.values('poker', 'poker_profile_link').annotate(num_pokes=Count('poker')).order_by('-num_pokes')[:100]
 
 
   return render_to_response(
