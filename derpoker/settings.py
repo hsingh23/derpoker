@@ -1,4 +1,5 @@
 # Django settings for derpoker project.
+import os
 
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
@@ -60,7 +61,7 @@ STATIC_ROOT = ''
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
-STATIC_URL = '/static/'
+# STATIC_URL = '/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
@@ -76,6 +77,18 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
+
+
+AWS_ACCESS_KEY_ID = os.environ.get('DERPOKER_AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('DERPOKER_AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = os.environ.get('DERPOKER_AWS_STORAGE_BUCKET_NAME')
+
+STATIC_URL = 'http://' + AWS_STORAGE_BUCKET_NAME + '.s3.amazonaws.com/'
+ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
+
+
+STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = 'zg4ju7g4nwq^pe2%r^z0hlp^2+*v(8cfsz&amp;*ajp&amp;f7b5bn0d47'
