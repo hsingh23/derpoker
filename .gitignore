@@ -1,2 +1,3 @@
 venv
 *.pyc
+derpoker/settings_local.py
