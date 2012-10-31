@@ -1,6 +1,19 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Take a poke at me - the nuclear option">
+    <meta name="author" content="Kurtis Nusbaum">
 <title>Take A Poke At Me - Poke At Me Bro</title>
+    <link href="{{ STATIC_URL }}bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="{{ STATIC_URL }}css/custom.css" rel="stylesheet"/>
+    <link href="{{ STATIC_URL }}bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
 <script type="text/javascript">
 
   var _gaq = _gaq || [];
@@ -27,5 +40,7 @@
   {% endfor %}
   </table>
   <p>Like takeapokeat.me? Checkout my other project: <a href="https://www.udjplayer.com">UDJ</a></p>
+    <script src="{{ STATIC_URL }}bootstrap/js/jquery.min.js"></script>
+    <script src="{{ STATIC_URL }}bootstrap/js/bootstrap.js"></script>
 </body>
 </html>
