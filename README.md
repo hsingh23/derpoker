@@ -1,7 +1,7 @@
 #derpoker
 
 derpoker is the nuclear option for that poke war you've been in on facebook. Just configure your facebook
-credentials and where you want to log your poking activity to and let the script do the rest.
+credentials and how you want to log your poking activity. derpoker takes care of the rest.
 
 
 ## Running the script
@@ -15,8 +15,8 @@ Everything that you need to run the webserver on Heroku with S3 as your static f
 detailed instructions on how to set this up, I'd be more than happy specify them. For right now I've really gotta get back to homework.
 
 ### Setup
-In order to run derpoker you need to create a file called `facebook.py` in the same directory as `autopoker.py`. You can easily do this by just
-copying `facebook-skel.py` to `facebook.py` and entering in your appropriate information. For more info on what the `SQL_CONNECT_STRING` can look
+In order to run derpoker you need to create a file called `facebook.py` in the same directory as `autopokes.py`. You can easily do this by just
+copying `facebook-skel.py` to `facebook.py` and editing in your appropriate information. For more info on what the `SQL_CONNECT_STRING` can look
 like, go checkout [SQL Alchemy's documentation on how their engines work][sqlal].
 
 
@@ -30,7 +30,6 @@ Leave that running and then start the autopoker script:
   python autopokes.py
 
 That's it!
-
 
 ## Who Are You?
 
