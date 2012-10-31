@@ -25,6 +25,7 @@ from selenium.webdriver.common.keys import Keys
 from time import sleep
 from pyvirtualdisplay import Display
 import sqlalchemy
+import random
 
 
 def openLogConnection():
@@ -66,10 +67,10 @@ def loopThatShit(browser, logConn):
           pokerlink = pokeheader.find_element_by_partial_link_text(pokername).get_attribute('href').split('/')[-1]
           pokeLink.click()
           logPoke(logConn, pokername, pokerlink)
-        except NoSuchElementException:
+        except Exception:
           pass
 
-      sleep(1)
+      sleep(30 + random(0,30))
 
 print "Opening display"
 display = Display(visible=0, size=(800, 600))
