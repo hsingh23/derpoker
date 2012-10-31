@@ -60,6 +60,7 @@ def loopThatShit(browser, logConn):
       pokeDashboard = browser.find_element_by_class_name('pokesDashboard')
       pokers = pokeDashboard.find_elements_by_class_name('objectListItem')
       for poker in pokers:
+        sleep(0.25 + random.uniform(0,0.5))
         try:
           pokeLink = poker.find_element_by_link_text('Poke Back')
           pokeheader = poker.find_element_by_class_name('pokeHeader')
@@ -70,7 +71,7 @@ def loopThatShit(browser, logConn):
         except Exception:
           pass
 
-      sleep(30 + random(0,30))
+      sleep(30 + random.uniform(-5,5))
 
 print "Opening display"
 display = Display(visible=0, size=(800, 600))
