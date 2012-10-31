@@ -1,3 +1,4 @@
+#/bin/env/python
 from facebook import FBPASS, FBLOGIN, SQL_CONNECT_STRING
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
@@ -46,7 +47,7 @@ def loopThatShit(browser, logConn):
           pokeLink.click()
           logPoke(logConn, pokername, pokerlink)
         except Exception as f:
-          print str(f)
+          pass
 
       sleep(1)
 
