@@ -1,3 +1,5 @@
 venv
 *.pyc
 derpoker/settings_local.py
+autoPokeShizzle/facebook.py
+*.jar
