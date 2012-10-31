@@ -6,7 +6,7 @@ from django.db.models import Count
 
 
 def home(request):
-  pokers = Poke.objects.annotate(num_pokes=Count('poker'))
+  pokers = Poke.objects.values('poker').annotate(num_pokes=Count('poker'))
 
 
   return render_to_response(
