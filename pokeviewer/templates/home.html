@@ -5,10 +5,10 @@
 <body>
   <h1>I'm alive</h1>
   <table>
-  {% for poker in pokers %}
+  {% for poker_entry in pokers %}
     <tr>
-      <td> {{ poker.poker }} </td>
-      <td> {{ poker.num_pokes }} </td>
+      <td> {{ poker_entry.poker }} </td>
+      <td> {{ poker_entry.num_pokes }} </td>
     </td>
   {% endfor %}
   </table>
