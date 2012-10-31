@@ -54,14 +54,8 @@ def loopThatShit(browser, logConn):
   print "Getting facebook.com/pokes"
   browser.get("http://www.facebook.com/pokes")
   print "Starting poke loop"
-  i = 0
   while(True):
-      if i>360:
-        i=0
-        browser.get("http://www.facebook.com/pokes")
-      else:
-        i += 100
-
+      browser.get("http://www.facebook.com/pokes")
       pokeDashboard = browser.find_element_by_class_name('pokesDashboard')
       pokers = pokeDashboard.find_elements_by_class_name('objectListItem')
       for poker in pokers:
