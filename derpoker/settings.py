@@ -177,6 +177,8 @@ import dj_database_url
 DATABASES['default'] =  dj_database_url.config()
 
 
+MAX_POKES_SHOW = str(os.environ.get('DERPOKER_MAX_POKES_SHOW', "25"))
+
 try:
   from settings_local import *
 except ImportError:

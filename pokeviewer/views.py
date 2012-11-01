@@ -21,10 +21,11 @@ from django.template import Context, RequestContext, loader
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render_to_response
 from django.db.models import Count
+from derpoker.settings import MAX_POKES_SHOW
 
 
 def home(request):
-  pokers = Poke.objects.values('poker', 'poker_profile_link').annotate(num_pokes=Count('poker')).order_by('-num_pokes')[:100]
+  pokers = Poke.objects.values('poker', 'poker_profile_link').annotate(num_pokes=Count('poker')).order_by('-num_pokes')[:MAX_POKES_SHOW]
 
 
   return render_to_response(
