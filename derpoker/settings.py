@@ -4,9 +4,16 @@ import os
 DEBUG = True if os.environ.get('DERPOKER_DEBUG', "False") == "True" else False
 TEMPLATE_DEBUG = DEBUG
 
+
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
+
+adminEmail = os.environ.get('DERPOKER_ADMIN_EMAIL', "")
+if adminEmail != "":
+  ADMINS = (
+      ('admin', adminEmail),
+  )
 
 MANAGERS = ADMINS
 
