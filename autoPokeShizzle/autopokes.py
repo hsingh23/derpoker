@@ -27,6 +27,10 @@ from pyvirtualdisplay import Display
 import sqlalchemy
 import random
 
+POKE_LOOP_PAUSE = 3600
+POKE_LOOP_JITTER = 360
+POKE_PAUSE = 5
+POKE_JITTER = 1
 
 def openLogConnection():
   engine = sqlalchemy.create_engine(SQL_CONNECT_STRING)
@@ -60,7 +64,7 @@ def loopThatShit(browser, logConn):
       pokeDashboard = browser.find_element_by_class_name('pokesDashboard')
       pokers = pokeDashboard.find_elements_by_class_name('objectListItem')
       for poker in pokers:
-        sleep(0.5 + random.uniform(0,0.5))
+        sleep(POKE_PAUSE + random.uniform(-POKE_JITTER, POKE_JITTER))
         try:
           pokeLink = poker.find_element_by_link_text('Poke Back')
           pokeheader = poker.find_element_by_class_name('pokeHeader')
@@ -71,7 +75,7 @@ def loopThatShit(browser, logConn):
         except Exception:
           pass
 
-      sleep(60 + random.uniform(-10,10))
+      sleep(POKE_LOOP_PAUSE + random.uniform(-POKE_LOOP_JITTER, POKE_LOOP_JITTER))
 
 print "Opening display"
 display = Display(visible=0, size=(800, 600))
