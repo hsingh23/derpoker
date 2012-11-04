@@ -18,7 +18,7 @@
 # You should have received a copy of the GNU General Public License
 # along with derpoker.  If not, see <http://www.gnu.org/licenses/>.
 #
-from facebook import FBPASS, FBLOGIN, SQL_CONNECT_STRING
+from facebook import *
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.keys import Keys
@@ -26,11 +26,6 @@ from time import sleep
 from pyvirtualdisplay import Display
 import sqlalchemy
 import random
-
-POKE_LOOP_PAUSE = 3600
-POKE_LOOP_JITTER = 360
-POKE_PAUSE = 5
-POKE_JITTER = 1
 
 def openLogConnection():
   engine = sqlalchemy.create_engine(SQL_CONNECT_STRING)
