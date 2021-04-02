@@ -5,7 +5,7 @@ distribute==0.6.24
 dj-database-url==0.2.1
 django-boto==0.1.6b
 django-storages==1.1.5
-gunicorn==0.14.6
+gunicorn==19.4.0
 psycopg2==2.4.5
 python-dateutil==1.2
 wsgiref==0.1.2
